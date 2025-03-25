@@ -1,3 +1,7 @@
+// Strassen's Matrix Multiplication Algorithm
+// Time Complexity: O(n^log7) ~ O(n^2.81)
+// Space Complexity: O(n^2)
+
 public class StrassenMatrixMultiplication {
     public static int[][] strassenMultiply(int[][] A, int[][] B) {
         int n = A.length;
