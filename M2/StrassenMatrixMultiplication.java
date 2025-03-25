@@ -2,6 +2,8 @@
 // Time Complexity: O(n^log7) ~ O(n^2.81)
 // Space Complexity: O(n^2)
 
+import java.util.*;
+
 public class StrassenMatrixMultiplication {
     public static int[][] strassenMultiply(int[][] A, int[][] B) {
         int n = A.length;
@@ -102,26 +104,28 @@ public class StrassenMatrixMultiplication {
         }
     }
 
-    public static void input()
+    public static void inputMatrix(int[][] matrix){
+        Scanner sc = new Scanner(System.in);
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        int[][] A = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
-        };
-
-        int[][] B = {
-            {17, 18, 19, 20},
-            {21, 22, 23, 24},
-            {25, 26, 27, 28},
-            {29, 30, 31, 32}
-        };
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the elements of the matrix:");
+        int n = sc.nextInt();
+        int[][] A = new int[n][n];
+        int[][] B = new int[n][n];
+        System.out.println("Enter elements of matrix A:");
+        inputMatrix(A);
+        System.out.println("Enter elements of matrix B:");
+        inputMatrix(B);
         System.out.println("Matrix A:");
         displayMatrix(A);
-
         System.out.println("\nMatrix B:");
         displayMatrix(B);
 
