@@ -30,7 +30,7 @@ public class FloydAlgorithm {
         System.out.println("Shortest distances between every pair of vertices:");
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                if(dist[i][j] == INF){
+                if(dist[i][j] == 999){
                     System.out.print("INF ");
                 } else {
                     System.out.print(dist[i][j] + " ");
