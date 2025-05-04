@@ -19,7 +19,7 @@ public class Kruskal{
         }
     }
     void Kruskal(int n,int[][] cost){
-        int[] parent = new int[n];
+        int[] parent = new int[10];
         int[][] t = new int[10][20];
         int k=0,count=0,mincost=0;
         int i,j,min,u=0,v=0;
