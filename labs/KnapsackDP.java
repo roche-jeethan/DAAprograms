@@ -38,6 +38,8 @@ public class KnapsackDP{
         KnapsackDP ks = new KnapsackDP();
         System.out.print("Enter number of items: ");
         int n = sc.nextInt();
+        System.out.print("Enter knapsack capacity: ");
+        int w = sc.nextInt();
         int[] wt = new int[w+1];
         int[] val = new int[n+1];
         System.out.print("Enter the weights of the items: ");
@@ -48,8 +50,6 @@ public class KnapsackDP{
         for(i=1;i<=n;i++){
             val[i] = sc.nextInt();
         }
-        System.out.print("Enter knapsack capacity: ");
-        int w = sc.nextInt();
         ks.calculate(wt, val, w, n);
     }
 }
