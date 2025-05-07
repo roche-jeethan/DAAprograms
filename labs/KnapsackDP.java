@@ -8,15 +8,13 @@ public class KnapsackDP{
         int[][] F = new int[n+1][w+1];
         int i,j;
         for(i=0;i<=n;i++){
-            for(j=0;j<=n;j++){
+            for(j=0;j<=w;j++){
                 if(i==0 || j==0){
                     F[i][j] = 0;
+                } else if(j<wt[i]){
+                    F[i][j] = F[i-1][j];
                 } else {
-                    if(j<wt[i]){
-                        F[i][j] = F[i-1][j];
-                    } else {
-                        F[i][j] = Math.max(F[i-1][j], val[i] + F[i-1][j-wt[i]]);
-                    }
+                    F[i][j] = Math.max(F[i-1][j], val[i] + F[i-1][j-wt[i]]);
                 }
             }
         }
@@ -26,7 +24,7 @@ public class KnapsackDP{
         } else {
             System.out.println("Optimal subset: ");
         }
-        for(i=n;i>0 && F[i][w]>0;i--){
+        for(i=n;i>0 && w>0;i--){
             if(F[i][w] != F[i-1][w]){
                 System.out.println("Item " + i + " ");
                 w = w - wt[i];
